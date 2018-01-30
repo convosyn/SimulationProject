@@ -1,0 +1,18 @@
+arrival_rate = input('Enter average arrival rate : ');
+service_rate = input('Enter average service rate : ');
+o = arrival_rate / service_rate;
+cust_sys = o / (1 - o);
+cust_q = o^2 / (1 - o);
+avg_waitingTime = 1 / (service_rate - arrival_rate);
+display('The occupancy for the given queue is : ');
+display(o);
+display('Average number of the custumers in the system is : ');
+display(cust_sys);
+display('Average number of the custumers in the queue is : ');
+display(cust_q);
+display('Average waiting time in the queue : ');
+display(avg_waitingTime);
+n = input('Enter the number of customers whose probability you want to know : ');
+prob_cust = (1 - o) * o ^ n;
+display('The required probability is : ');
+display(prob_cust);

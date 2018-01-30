@@ -1,0 +1,18 @@
+y1 = chi2rnd(10, [500 2]);
+y2 = normrnd(0, 10, [500 2]);
+y3 = poissrnd(10, [500 2]);
+y4 = binornd(20, 0.5, [500 2]);
+figure;
+subplot(2, 2, 1);
+plotmatrix(y1);
+title("for chisquare");
+subplot(2, 2, 2);
+plotmatrix(y2);
+title("for normal");
+subplot(2, 2, 3);
+plotmatrix(y3);
+title("for poission");
+subplot(2, 2, 4);
+plotmatrix(y4);
+title("for binomial");
+fprintf("chirnd error: %f \npoissrnd :%f  \nbinomial:%f\n",rms(y2, y1), rms(y2, y3),rms(y2, y4));
